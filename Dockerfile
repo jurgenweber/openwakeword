@@ -1,4 +1,4 @@
-FROM python:3-bookworm
+FROM python:3.11-bookworm
 
 ENV PIP_BREAK_SYSTEM_PACKAGES=1
 ENV OPENWAKEWORD_LIB_VERSION=1.8.1
@@ -12,6 +12,8 @@ RUN \
         python3 \
         python3-pip \
         libopenblas0 \
+    \
+    && pip3 install --upgrade pip \
     \
     && pip3 install --no-cache-dir -U \
         setuptools \
