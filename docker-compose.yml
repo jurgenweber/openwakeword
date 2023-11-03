@@ -1,0 +1,17 @@
+---
+version: '3.7'
+services:
+  openwakeword:
+    build:
+      context: .
+    container_name: openwakeword
+    environment:
+      THRESHOLD: 0
+      TRIGGER_LEVEL: 0
+      DEBUG_LOGGING: false
+    image: openwakeword:latest
+    ports:
+      - "10400:10400"
+    restart: unless-stopped
+    volumes:
+      - /mnt/openwakeword:/share/openwakeword
